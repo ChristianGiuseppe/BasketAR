@@ -1,0 +1,108 @@
+PACKAGE MANAGER
+AR Foundation
+ARCore XR Plugin
+UI kitTool 
+
+enable -> ANDROID
+Auto Graphics API checked
+Multithreaded Rendering unchecked
+setting minimum API Level -> 26
+target level -> 30
+Scripting backend IL2cPP
+api compatibility level 4.x
+
+
+project settings 
+xr plug in Management enable AR
+
+Settaggio Anchor settaggio API su google Cloud 
+
+Abilitare AR core su google cloud ->  credeziali -> creare una chiave privata ->AIzaSyAK2xzGsngFn3F8zA72aznymaC6THKB2YA
+
+Scaricare e settare ARCore Extensions
+https://github.com/google-ar/arcore-unity-extensions/releases/
+window > Package Manager -> add packagage from tar ball -> selezionare ARCore Extensions
+
+edit -> project settings -> ARCore Extensions -> select API KEY and copy apy
+
+
+creazione AR PLANE
+empty game object ->
+add AR Plane
+add AR Plane Mesh Visualizer
+add mesh collider
+add mesh filter 
+add mesh rendered
+add line rendered -> width 0.010 -> color red -> corner vertices 4 -> end Cap Vertices 4 -> Use space world unchecked -> Cast Shadow off -> receive shadows unchecked
+-> material element 0 default line. 
+
+create material white trasparent -> color trasparen 70% 
+add material to Mesh Renderer
+add  to folder prefabs 
+and add to AR Session Origin Plane Prefab ARPlane
+
+
+Creazione slider vita
+STEP 1:
+Creare una UI slider > Andare su event system su Standalone Input Modle component e cambiare Horzontal Axis to HorizontalUI e Vertical Axis to VerticalUI
+Selezionare il Cavans Object > cambiare la Reference Pixels per Unit a 1, 1
+Impostare nel Cavas Object il Renderd Mode a World Space
+
+STEP 2: 
+Drag Canvas all'itnerno del GameObject a cui vuoi associarlo
+Selezionare il cavas e trasformare la posizione(0, 0.1, 0)
+Cambiare la width e la heigth to 3.5 e 3.5
+Cambiare la rotazione 90,0,0
+Salvare la scena 
+
+STEP 3
+Expandi il Canvas e tutti i figli con alt- la freccia sull'editor
+Seleziona HandleSLideArea e cancellalo
+Seleziona lo Slider, background e Fill Area e effettual il fill per stretchare alt più stretch
+
+STEP 4
+Seleziona lo Slider
+uncheck Interactable
+Change the Transition to None
+Change The max valute and value to 100
+
+STEP 5:
+Rename Slider to HealthSLider
+select the background GameObject
+Search circle image  and change the source Image to HealthWheel 
+click on color to change the apha to 80
+
+STEP 6:
+Select the Fill GameObject
+Set the SourceImage on the Image component to HealthWheel
+Change the Alpha to 150 
+Change Image type to filled
+change the fill orgin to left 
+uncheck clockwise
+
+
+
+
+Pull form git
+Enable cloud anchor
+Asset manager: https://github.com/google-ar/arcore-unity-extensions.git <-- AR Extension for cloud anchors
+create in the scene the new object ar extension 
+add in the object the asset necessary to create ar cloud anchor
+session > AR session
+session origin > session origin
+camera manager > camera manager
+ar core extension config > new xr new ar core config and camera filter 
+enable on ar core cloud anchros config mode to Enable
+
+
+Autenticazione con chiave API
+L' API Key opzione di autenticazione in grado di ospitare un ancoraggio cloud per un massimo di 1 giorno.
+
+Segui questi passaggi per ottenere e aggiungere una chiave API al tuo progetto:
+
+Vedere il Cloud Platform Console Centro assistenza di Google per ottenere una chiave API.
+
+Aggiungi la nuova chiave API al tuo progetto:
+
+In Unity, andare in Edit > Impostazioni progetto>> Arcore XR estensioni.
+Aggiungi la tua chiave API per l' Cloud Anchor API Keys campo.
